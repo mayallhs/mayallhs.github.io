@@ -1,0 +1,412 @@
+/* This is the required project styling. Will contain essential CSS styles like:
+   * Flex property
+   * Grid layout
+   * Cards and sections
+*/
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+/* variables */
+:root {
+  /* Colors */
+  --primary-color: #35a0f8;
+  --secondary-color: #9fdefc;
+  --bg-primary: #ffffff;
+  --text-color: #222222;
+  --text-color-two: #ffffff;
+  --bg-secondary: #000000;
+  --card-background: #f4f4f4;
+  --bg-secondary-two: #111111;
+
+  --shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+
+  /* Font Weight */
+  --weight-small: 400;
+  --weight-semibold: 600;
+  --weight-bold: 800;
+
+  /* Max width */
+  --width-small: 600px;
+  --width-medium: 1100px;
+  --width-large: 1300px;
+}
+
+[data-theme="dark"] {
+  --primary-color: #35a0f8;
+  --secondary-color: #9fdefc;
+  --bg-primary: #000000;
+  --text-color: #ffffff;
+  --text-color-two: #222222;
+  --bg-secondary: #ffffff;
+  --card-background: #111111;
+  --bg-secondary-two: #f4f4f4;
+  --shadow: 0 2px 10px rgba(95, 95, 95, 0.2);
+}
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+
+/* Reset default styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+/* Main styling */
+body {
+  background: var(--bg-primary);
+  color: var(--text-color);
+  font-family: "Raleway", sans-serif;
+  line-height: 1.5;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  background: var(--bg-primary);
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 20;
+  height: 80px;
+  width: 100%;
+}
+
+.navbar .nav-menu {
+  display: flex;
+  align-items: center;
+  background: var(--bg-primary);
+}
+
+.navbar .nav-link {
+  margin: 0 1rem;
+  font-size: 0.8rem;
+  font-weight: var(--weight-semibold);
+}
+
+.navbar #logo img {
+  display: block;
+  width: 55px;
+}
+
+.navbar .btn {
+  margin-right: 1.5rem;
+}
+
+.fas.fa-arrow-right {
+  margin-left: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* hamburger */
+.hamburger {
+  margin-bottom: 0.1rem;
+  display: none;
+}
+
+.bar {
+  display: block;
+  width: 23px;
+  height: 3px;
+  margin: 4px auto;
+  transition: all 0.3s ease-in-out;
+  border-radius: 30px;
+  background-color: var(--bg-secondary);
+}
+
+/* hark section */
+#hark {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.profile-image {
+  width: 150px;
+  border-radius: 50%;
+  animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+
+  to {
+    transform: translateY(-10px);
+  }
+}
+
+.division {
+  width: 100%;
+  height: 2px;
+  background-color: var(--card-background);
+  margin: 5.5rem 0;
+}
+
+/* Clients */
+#clients{
+  display:flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0px 0px 23px 0px;
+}
+
+#clients img {
+  height: 8rem;
+    margin: 0.5rem;
+    padding: 0.5rem;
+}
+
+/* Projects */
+#projects {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem auto 5rem;
+}
+
+#projects .btn {
+  align-self: center;
+  margin: 2rem 0;
+}
+
+.project {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(250px, auto);
+  grid-gap: 0.9rem;
+}
+
+.card .project-bio p {
+  font-size: 0.83rem;
+}
+
+.card .project-bio h3 {
+  font-size: 0.9rem;
+}
+
+.project-info {
+  display: flex;
+  justify-content: space-between;
+  opacity: 0;
+  position: relative;
+  transition: 0.5s ease-in-out;
+}
+
+.project-bio {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  top: 160px;
+  left: 10px;
+}
+
+/* Footer */
+#footer {
+  background: #111111;
+}
+
+#footer .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  min-height: 160px;
+  text-align: center;
+}
+
+#footer a {
+  font-size: 0.8rem;
+  color: #fff;
+}
+
+#footer a:hover {
+  opacity: 0.6;
+}
+
+#footer .social {
+  margin: 0.9rem 0;
+}
+
+#footer .social img {
+  width: 20px;
+  height: 20px;
+}
+
+#footer .social a {
+  margin: 0 0.5rem;
+}
+
+#footer p {
+  font-size: 0.8rem;
+}
+
+/* Responsiveness */
+
+@media (max-width: 1000px) {
+  .project {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 670px) {
+  .navbar .nav-menu {
+    position: fixed;
+    right: -100vw;
+    top: 4.5rem;
+    flex-direction: column;
+    width: calc(80% - 10px);
+    transition: 0.3s;
+    box-shadow: var(--shadow);
+    padding: 2rem;
+    border-radius: 5px;
+    align-items: flex-start;
+  }
+
+  .navbar .btn {
+    margin: 0;
+    margin-top: 1rem;
+  }
+
+  .nav-menu.active {
+    right: 20px;
+  }
+
+  .nav-menu .nav-link {
+    font-size: 0.9rem;
+    margin: 0 0.2rem;
+  }
+
+  .nav-menu li {
+    margin-bottom: 0.5rem;
+    width: 100%;
+  }
+
+  .nav-menu .btn {
+    width: 100%;
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    padding: 0.2rem 0.4rem;
+  }
+
+  .hamburger.active {
+    border: 1px dotted gray;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .project {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .header-container .btn {
+    border-radius: 5px;
+    width: 80%;
+  }
+}
+
+.wrapper-grid {
+  box-sizing: border-box;
+  display: grid;
+  /* difference from @media -> repeat(auto-fit, minmax(10rem, 20rem))  */
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 20rem)); 
+  justify-content: center;
+  grid-gap: 2rem;
+  margin: 2rem;
+}
+
+
+/* profile card container */
+.wrapper-grid > .container {
+  display: flex;
+  flex-direction: column;
+ box-shadow: 0px 2px 8px 0px #b0bec5;
+  text-align: center;
+  border-radius: 1rem;
+  position: relative;
+  align-items: center;
+  overflow: hidden; /* to see the curve on borders */
+  padding: 0;
+  animation: bounce 1.5s infinite alternate;
+}
+
+
+/* background image in card */
+.banner-img {
+  position: absolute;
+  /* Created with https://www.css-gradient.com */
+  background: #81E7F4;
+  background: -webkit-linear-gradient(top left, #81E7F4, #3969BF);
+  background: -moz-linear-gradient(top left, #81E7F4, #3969BF);
+  background: linear-gradient(to bottom right, #81E7F4, #3969BF);
+  height: 10rem;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+/*circle profile image on top*/
+.company-img {
+width: 8rem; 
+clip-path: circle(60px at center);
+margin-top: 4.5rem;
+  
+}
+
+.name {
+  font-size: 1.5rem;
+  padding-top: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.description {
+  margin: 1rem 2rem;
+  font-size: 0.9rem;
+}
