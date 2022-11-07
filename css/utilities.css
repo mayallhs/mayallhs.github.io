@@ -151,16 +151,12 @@
   
   /* Project 2 */
   .card:nth-child(2) {
-    background: url(../assets/project/project-two.png) center center/cover;
+    background: url(../assets/project/project-three.png) center center/cover;
   }
   
   /* Project 3 */
   .card:nth-child(3) {
-<<<<<<< HEAD
     background: url(../assets/project/project-two.png) center center/cover;
-=======
-    background: url(../assets/project/project-three.png) center center/cover;
->>>>>>> parent of f88873c (added project background images and updated css stylings)
   }
 
   
