@@ -10,4 +10,3 @@ Built With:
 Usage
 To access the website click the following link: https://mayallhs.github.io
 
-Design Inspired by: <a href="https://github.com/CommunityPro/portfolio-html">Github Repsository</a>
